@@ -1,0 +1,8 @@
+[project]
+name = "pystruct"
+version = "0.1.0"
+description = "Automation for structure folder"
+dependencies = []
+
+[project.scripts]
+pystruct = "pystruct.cli:main"
