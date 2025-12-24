@@ -1,7 +1,7 @@
-```markdown
+
 # pystruct
 
-A lightweight Python CLI tool to automate your project folder structure creation. With one command, you can set up professional scaffolding for Web, Machine Learning, Data Science, and more.
+A lightweight Python CLI tool to automate your project folder structure creation. With one command, you can set up scaffolding for Web, Machine Learning, Data Science, and more.
 
 ## Installation
 
@@ -12,8 +12,7 @@ Since this project is in development, you can install it locally:
 3. Run:
    ```bash
    pip install -e .
-
-```
+   
 
 ## Usage
 
@@ -38,6 +37,9 @@ This tool follows standard Python packaging practices:
 
 * `main.py`: Core logic for file and folder creation.
 * `cli.py`: Command-line interface handling.
+
+## Footage:
+<img width="1920" height="1080" alt="Screenshot (1179)" src="https://github.com/user-attachments/assets/c85e2b7a-c4fa-456e-a1e7-d929047c7529" />
 
 ## License
 
