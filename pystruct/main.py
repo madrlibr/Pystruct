@@ -1,9 +1,15 @@
-import sys
 from pathlib import Path
 
 def ml():
-    train_c = """
-# Training entry point.
+    train_c = """# Training entry point.
+
+# import necessary libraries
+import pandas as pd
+import numpy as np
+import sklearn as sk
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 def main():
     pass  #training logic here
@@ -11,8 +17,18 @@ def main():
 if __name__ == "__main__":
     main()
 """
-    eval_c = """
-# Evaluation entry point.
+    eval_c = """# Evaluation entry point.
+
+# import necessary libraries
+import pandas as pd
+import numpy as np
+import sklearn as sk
+from sklearn.metrics import accuracy_score, classification_report 
+import joblib 
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 def main():
     pass  #evaluation logic here
@@ -20,9 +36,18 @@ def main():
 if __name__ == "__main__":
     main()
 """
-    test_c = """
+    predict_c = """# Testing entry point.
 
-# Testing entry point.
+# import necessary libraries
+import pandas as pd
+import numpy as np
+import sklearn as sk
+from sklearn.metrics import accuracy_score, classification_report 
+import joblib 
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 def main():
     pass  #testing logic here
@@ -32,24 +57,25 @@ if __name__ == "__main__":
 """
     model_c = """# Model definition file.
 """
+
+    files_ml = ["data.csv", "model.pkl", "train.py", "evaluate.py", "predict.py"]
+    for f in files_ml:
+        Path(f).touch()
+
     tr_folder = Path("Training")
     ts_folder = Path("Testing")
     tr_folder.mkdir(exist_ok=True)
     ts_folder.mkdir(exist_ok=True)
 
-    files_ml = ["data.csv", "model.pkl", "train.py", "evaluate.py", "test.py"]
-    for file in files_ml:
-        Path(file).touch()
-
     train_path = Path("train.py")
     eval_path = Path("evaluate.py")
-    test_path = Path("test.py")
+    predict_path = Path("predict.py")
     model_path = Path("model.py")
 
     model_path.write_text(model_c)
     train_path.write_text(train_c)
     eval_path.write_text(eval_c)
-    test_path.write_text(test_c)
+    predict_path.write_text(predict_c)
 
     print("Successfully created Machine Learning project structure.")
         
@@ -99,33 +125,33 @@ console.log("JavaScript loaded.");
 </body>
 </html>"""
 
+    Path("tests").mkdir(exist_ok=True)
+
     files = ["requirements.txt", "README.md", ".env", ".gitignore"]
     for f in files:
         Path(f).touch()
 
-    Path("tests").mkdir(exist_ok=True)
-
     src_path = Path("src") / "my_app"
-    sub_folders = ["api", "models", "services", "static", "templates", "utils"]
+    sub_f = ["api", "models", "services", "static", "templates", "utils"]
     
-    for folder in sub_folders:
-        (src_path / folder).mkdir(parents=True, exist_ok=True)
+    for f in sub_f:
+        (src_path / f).mkdir(parents=True, exist_ok=True)
 
     for f in ["__init__.py", "app.py"]:
         (src_path / f).touch()
 
-    static_path = src_path / "static"
-    static_subfolders = ["css", "js", "images"]
-    for folder in static_subfolders:
-        (static_path / folder).mkdir(parents=True, exist_ok=True)
+    static_p = src_path / "static"
+    static_sf = ["css", "js", "images"]
+    for folder in static_sf:
+        (static_p / folder).mkdir(parents=True, exist_ok=True)
 
-    style_path = static_path / "css"
+    style_path = static_p / "css"
     files_css = ("style.css")
     (style_path / files_css).touch()
     css_path = style_path / "style.css"
     css_path.write_text(style_c)
 
-    js_path = static_path / "js"
+    js_path = static_p / "js"
     js_files = ("script.js")
     (js_path / js_files).touch()
     js_file_path = js_path / "script.js"
@@ -153,12 +179,38 @@ console.log("JavaScript loaded.");
 
 def ds():
     data_collection_c = """# Data Collection Script
+
+#import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn as sk
+
 """
     data_cleaning_c = """# Data Cleaning Script
+#import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn as sk
 """
     data_analysis_c = """# Data Analysis Script
+#import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn as sk
 """
     visualization_c = """# Data Visualization Script
+#import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn as sk
 
 """
     
@@ -242,3 +294,39 @@ if __name__ == "__main__":
     main_path.write_text(main_c)
 
     print("Successfully created Library project structure.")
+
+def pract(name):
+    comment_c = """# This is a practice exercise file.
+"""
+    files_py = ["exercise1.py", "exercise2.py", "exercise3.py", "exercise4.py", "exercise5.py",
+              "exercise6.py", "exercise7.py", "exercise8.py", "exercise9.py", "exercise10.py",
+              "exercise11.py", "exercise12.py", "exercise13.py", "exercise14.py", "exercise15.py"]
+    files_js = ["exercise1.js", "exercise2.js", "exercise3.js", "exercise4.js", "exercise5.js",
+              "exercise6.js", "exercise7.js", "exercise8.js", "exercise9.js", "exercise10.js",
+              "exercise11.js", "exercise12.js", "exercise13.js", "exercise14.js", "exercise15.js"]
+    note = """# you can add other files hear such as dataset, images, etc."""
+    
+    folder = Path("practice_exercises").mkdir(exist_ok=True)
+    folder = Path("practice_exercises")
+    Path(folder / "notes.txt").touch(exist_ok=True)
+    Path(folder / "notes.txt").write_text(note)
+    
+    if name == "js":
+        for f in files_js:
+            Path(f).touch()
+
+        exe_c = Path("exercise1.js")
+        exe_c.write_text(comment_c)
+        print("Successfully created Practice project structure for JavaScript.")
+        return
+    
+    elif name == "py":
+        for f in files_py:
+            Path(f).touch()
+
+        exe_p = Path("exercise1.py")
+        exe_p.write_text(comment_c)
+        print("Successfully created Practice project structure for Python.")
+        return
+    else:
+        print("Please specify 'py' for Python or 'js' for JavaScript practice exercises.")

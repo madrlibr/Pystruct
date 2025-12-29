@@ -1,5 +1,5 @@
 import sys
-from pystruct.main import ml, web, ds, script, lib
+from pystruct.main import ml, web, ds, script, lib, pract
 
 def main():
     """Main Entry Point for the CLI."""
@@ -16,10 +16,12 @@ def main():
         web()
     elif command == "ds":
         ds()
-    elif command == "script":
+    elif command == "script": 
         script()
-    elif command == "lib" and command2 == command2:
+    elif command == "lib":
         lib(command2)
+    elif command == "pract":
+        pract(command2)
     else:
         print(f"Error: Command '{command}' not recognized.")
         print("Available commands: ml, web, ds, script, lib")
