@@ -1,6 +1,7 @@
+
 # pystruct
 
-A lightweight Python CLI tool to automate your project folder structure creation
+A lightweight Python CLI tool to automate your project folder structure creation. With one command, you can set up scaffolding for Web, Machine Learning, Data Science, and more.
 
 ## Installation
 
@@ -11,25 +12,35 @@ Since this project is in development, you can install it locally:
 3. Run:
    ```bash
    pip install -e .
+   
 
+## Usage
 
-Usage
 Run the following command in your terminal:
 
+```bash
 pystruct [type] [name]
 
-Available Templates:
-pystruct web: Creates a modern web application structure (src, static, templates, etc.).
+```
 
-pystruct ml: Creates a Machine Learning project structure (Training, Testing, models).
+### Available Templates:
 
-pystruct ds: Creates a Data Science structure (data, notebooks, scripts).
+* `pystruct web`: Creates a modern web application structure (src, static, templates, etc.).
+* `pystruct ml`: Creates a Machine Learning project structure (Training, Testing, models).
+* `pystruct ds`: Creates a Data Science structure (data, notebooks, scripts).
+* `pystruct script`: Creates a simple Python script setup with logging.
+* `pystruct lib <name>`: Scaffolds a new Python library project.
 
-pystruct script: Creates a simple Python script setup with logging.
+## Project Structure
 
-pystruct lib <name>: Scaffolds a new Python library project.
-
-Project Structure
 This tool follows standard Python packaging practices:
-main.py: Core logic for file and folder creation.
-cli.py: Command-line interface handling.
+
+* `main.py`: Core logic for file and folder creation.
+* `cli.py`: Command-line interface handling.
+
+## Footage:
+<img width="1920" height="1080" alt="Screenshot (1179)" src="https://github.com/user-attachments/assets/c85e2b7a-c4fa-456e-a1e7-d929047c7529" />
+
+## License
+
+This project is licensed under the MIT License.
