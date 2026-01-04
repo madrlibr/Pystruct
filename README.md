@@ -30,6 +30,7 @@ pystruct [type] [name]
 * `pystruct ds`: Creates a Data Science structure (data, notebooks, scripts).
 * `pystruct script`: Creates a simple Python script setup with logging.
 * `pystruct lib <name>`: Scaffolds a new Python library project.
+* `pystruct pract <categories>`: Create a structure to practice or learn programming language.
 
 ## Project Structure
 
@@ -43,4 +44,4 @@ This tool follows standard Python packaging practices:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT LICENSE.
