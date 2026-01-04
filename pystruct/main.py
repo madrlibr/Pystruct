@@ -91,7 +91,7 @@ def ds():
 
 def script():
     main_path = Path("main.py")
-    main_path.write_text(dict_vars["lib"]["main_c"])
+    main_path.write_text(dict_vars["script"]["main_c"])
 
     Path("logs").mkdir(exist_ok=True)
     files = ["main.py", "requirements.txt"]

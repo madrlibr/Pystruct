@@ -23,7 +23,6 @@ import numpy as np
 import sklearn as sk
 from sklearn.metrics import accuracy_score, classification_report 
 import joblib 
-import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -152,18 +151,17 @@ files_py = ["exercise1.py", "exercise2.py", "exercise3.py", "exercise4.py", "exe
 files_js = ["exercise1.js", "exercise2.js", "exercise3.js", "exercise4.js", "exercise5.js",
               "exercise6.js", "exercise7.js", "exercise8.js", "exercise9.js", "exercise10.js",
               "exercise11.js", "exercise12.js", "exercise13.js", "exercise14.js", "exercise15.js"]
-note = """# you can add other files hear such as dataset, images, etc."""
+note = """# you can add other files here such as dataset, images, etc."""
 
 #script
 main_c = """
-Main script entry point.
+#Main script entry point.
 
 def main():
     pass
 
-
 if __name__ == "__main__":
-main()
+    main()
 """
 
 #dicting
