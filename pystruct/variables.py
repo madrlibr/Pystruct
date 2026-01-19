@@ -41,7 +41,6 @@ import numpy as np
 import sklearn as sk
 from sklearn.metrics import accuracy_score, classification_report 
 import joblib 
-import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -66,7 +65,7 @@ def main():
 if __name__ == "__main__":
     main()
 """
-readme_c = """# # Project Name
+readme_c = """# # Project 
 
 Short description.
 
@@ -93,7 +92,7 @@ html_c = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta ="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -140,7 +139,35 @@ import sklearn as sk
 """
 
 
-#lib variables has parameter on it's value so i'm still working on it
+main_c = """
+Main script entry point.
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+"""
+toml_c = f"""[project]
+ = ""
+version = "0.1.0"
+description = "Write your library description here."
+dependencies = []
+
+[project.scripts]
+ = ".cli:main" 
+"""
+cli_c = """
+def main():
+    print("Library CLI entry point")
+
+if __name__ == "__main__":
+    main()
+"""
+init_c = """__version__ = "0.1.0"
+"""
+readme_c = f"# \n\nWrite your library description here.\n"
+main_c = """# Main library functionality."""
 
 #pract
 comment_c = """# This is a practice exercise file.
@@ -196,5 +223,14 @@ dict_vars = {
     },
     "script": {
         "main_c": main_c
+    },
+    "lib": {
+        "main_c": main_c,
+        "toml_c": toml_c,
+        "cli_c": cli_c,
+        "init_c": init_c,
+        "readme_c": readme_c,
+        "main_C": main_c
+
     }
 }

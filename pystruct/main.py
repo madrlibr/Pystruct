@@ -1,25 +1,27 @@
 from pathlib import Path
-from .variables import dict_vars
+from .variables import *
+
 
 def ml():
-    files_ml = ["data.csv", "model.pkl", "train.py", "evaluate.py", "predict.py", "model.py"]
+    files_ml = ["train.py", "evaluate.py", "predict.py"]
     for f in files_ml:
         Path(f).touch()
-
-    tr_folder = Path("Training")
-    ts_folder = Path("Testing")
-    tr_folder.mkdir(exist_ok=True)
-    ts_folder.mkdir(exist_ok=True)
+    
+    Path("data").mkdir(exist_ok=True)
+    Path("data/raw").mkdir(exist_ok=True)
+    Path("data/processed").mkdir(exist_ok=True)
+    Path("model").mkdir(exist_ok=True)
+    Path("notebooks").mkdir(exist_ok=True)
 
     train_path = Path("train.py")
     eval_path = Path("evaluate.py")
     predict_path = Path("predict.py")
     model_path = Path("model.py")
 
-    model_path.write_text(dict_vars["ml"]["model_c"])
-    train_path.write_text(dict_vars["ml"]["train_c"])
-    eval_path.write_text(dict_vars["ml"]["eval_c"])
-    predict_path.write_text(dict_vars["ml"]["predict_c"])
+    model_path.write_text(model_c)
+    train_path.write_text(train_c)
+    eval_path.write_text(eval_c)
+    predict_path.write_text(predict_c)
 
     print("Successfully created Machine Learning project structure.")
         
@@ -130,12 +132,37 @@ if __name__ == "__main__":
 """
     readme_c = f"# {name}\n\nWrite your library description here.\n"
     main_c = """# Main library functionality."""
+    license_c = """
+MIT License
 
+Copyright (c) 2025 yourname
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
     name = str(name)
     Path(name).mkdir(exist_ok=True)
     lib_path = Path(name)
     for f in ["__init__.py", "main.py", "cli.py"]:
         (lib_path / f).touch()
+
+    gitignore = Path(".gitignore")
+    license = Path("LICENSE")
 
     cli_path = lib_path / "cli.py"
     init_path = lib_path / "__init__.py"
@@ -148,25 +175,28 @@ if __name__ == "__main__":
     pyproject_toml.write_text(toml_c)
     init_path.write_text(init_c)
     main_path.write_text(main_c)
+    license.write_text(license_c)
+
 
     print("Successfully created Library project")
 
 def pract(name):
     comment_c = """# This is a practice exercise file.
 """
+    note = """# you can add other files here such as dataset, images, etc."""
+
+    folder = Path("Folder").mkdir(exist_ok=True)
+    folder = Path("Folder")
+    Path(folder / "notes.txt").touch(exist_ok=True)
+    Path(folder / "notes.txt").write_text(note)
+
     files_py = ["exercise1.py", "exercise2.py", "exercise3.py", "exercise4.py", "exercise5.py",
               "exercise6.py", "exercise7.py", "exercise8.py", "exercise9.py", "exercise10.py",
               "exercise11.py", "exercise12.py", "exercise13.py", "exercise14.py", "exercise15.py"]
     files_js = ["exercise1.js", "exercise2.js", "exercise3.js", "exercise4.js", "exercise5.js",
               "exercise6.js", "exercise7.js", "exercise8.js", "exercise9.js", "exercise10.js",
               "exercise11.js", "exercise12.js", "exercise13.js", "exercise14.js", "exercise15.js"]
-    note = """# you can add other files hear such as dataset, images, etc."""
-
-    folder = Path("practice_exercises").mkdir(exist_ok=True)
-    folder = Path("practice_exercises")
-    Path(folder / "notes.txt").touch(exist_ok=True)
-    Path(folder / "notes.txt").write_text(note)
-
+    
     if name == "js":
         for f in files_js:
             Path(f).touch()
