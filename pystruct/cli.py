@@ -1,10 +1,9 @@
 import sys
-from pystruct.main import ml, web, ds, script, lib, pract
+from pystruct.main import *
 
 def main():
-    """Main Entry Point for the CLI."""
     if len(sys.argv) < 2:
-        print("Usage: pystruct [ml|web|ds|script|lib]")
+        print("Usage: pystruct [ml|web|ds|script|lib|pract|gitcom]")
         return
 
     command = sys.argv[1].lower()
@@ -22,6 +21,8 @@ def main():
         lib(command2)
     elif command == "pract":
         pract(command2)
+    elif command == "gitcom":
+        gitcom()
     else:
         print(f"Error: Command '{command}' not recognized.")
-        print("Available commands: ml, web, ds, script, lib")
+        print("Available commands: ml, web, ds, script, lib, pract, gitcom")

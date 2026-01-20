@@ -34,6 +34,7 @@ pystruct [type] [name]
 * `pystruct script`: Creates a simple Python script setup with logging.
 * `pystruct lib <name>`: Scaffolds a new Python library project.
 * `pystruct pract <categories>`: Create a structure to practice or learn programming language.
+* `pystruct gitcom`: Create basic git files such as .gitignore README.md and LICENSE.
 
 ## Project Structure
 
