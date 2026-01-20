@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="500" height="150" alt="1000190474" src="https://github.com/user-attachments/assets/8b0fabf4-ff9a-44c1-8c6a-5dfdeb6e7128" />
+</p>
 
 # pystruct
 
