@@ -138,7 +138,7 @@ import sklearn as sk
 
 """
 
-
+#lib
 main_c = """
 Main script entry point.
 
@@ -169,6 +169,7 @@ init_c = """__version__ = "0.1.0"
 readme_c = f"# \n\nWrite your library description here.\n"
 main_c = """# Main library functionality."""
 
+
 #pract
 comment_c = """# This is a practice exercise file.
 """
@@ -190,6 +191,80 @@ def main():
 if __name__ == "__main__":
     main()
 """
+
+
+
+#gitcom
+license_c = """
+MIT License
+
+Copyright (c) 2025 yourname
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+readme_c = """# Project Title
+
+A concise description of the project, its purpose, and the problem it solves.
+
+## Features
+
+- Feature one description.
+- Feature two description.
+- Feature three description.
+
+## Tech Stack
+
+- **Frontend**: Framework/Library (e.g., React, Vue, Angular)
+- **Backend**: Language/Runtime (e.g., Node.js, Python, Go)
+- **Database**: Type (e.g., PostgreSQL, MongoDB)
+- **Infrastructure**: Platforms (e.g., AWS, Docker, Vercel)
+
+## Getting Started
+
+### Prerequisites
+
+List the software and versions required to run the project:
+- Node.js (version 18.x or higher)
+- npm or yarn
+- Docker (optional)
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com
+   cd repo-name
+
+## Usage
+
+Run the following command in your terminal:
+
+```bash
+*your project usage*
+
+```
+
+## License
+This project is licensed under the MIT LICENSE.
+"""
+gitignore_c = """#add yout files/folder to ignore"""
+
 
 #dicting
 dict_vars = {

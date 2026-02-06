@@ -52,15 +52,15 @@ def web():
 
         style_path = static_p / "css" / "style.css"
         style_path.touch()
-        style_path.write_text(dict_vars["web"]["style_c"])
+        style_path.write_text(style_c)
 
         js_path = static_p / "js" / "script.js"
         js_path.touch()
-        js_path.write_text(dict_vars["web"]["js_c"])
+        js_path.write_text(js_c)
 
         templates_path = src_path / "templates" / "index.html"
         templates_path.touch()
-        templates_path.write_text(dict_vars["web"]["html_c"])
+        templates_path.write_text(html_c)
 
         app_path = src_path / "app.py"
         readme_path = Path("README.md")
@@ -68,15 +68,16 @@ def web():
         env_path = Path(".env")
         gitignore_path = Path(".gitignore")
 
-        app_path.write_text(dict_vars["web"]["app_c"])
-        readme_path.write_text(dict_vars["web"]["readme_c"])
-        req_path.write_text(dict_vars["web"]["requirements_c"])
-        env_path.write_text(dict_vars["web"]["env_c"])
-        gitignore_path.write_text(dict_vars["web"]["gitignore_c"])
-
+        app_path.write_text(app_c)
+        readme_path.write_text(readme_c)
+        req_path.write_text(requirements_c)
+        env_path.write_text(env_c)
+        gitignore_path.write_t
+        
         print("Successfully created Web project structure.")
     except:
         return "Error!"
+    
 
 def ds():
     try:
@@ -91,10 +92,10 @@ def ds():
         da_path = Path("data_analysis.py")
         vz_path = Path("visualization.py")
 
-        dc_path.write_text(dict_vars["ds"]["data_collection_c"])
-        dcl_path.write_text(dict_vars["ds"]["data_cleaning_c"])
-        da_path.write_text(dict_vars["ds"]["data_analysis_c"])
-        vz_path.write_text(dict_vars["ds"]["visualization_c"])
+        dc_path.write_text(data_collection_c)
+        dcl_path.write_text(data_cleaning_c)
+        da_path.write_text(data_analysis_c)
+        vz_path.write_text(visualization_c)
 
         print("Successfully created Data Science project structure.")
     except:
@@ -103,7 +104,7 @@ def ds():
 def script():
     try:
         main_path = Path("main.py")
-        main_path.write_text(dict_vars["script"]["main_c"])
+        main_path.write_text(main_c)
 
         Path("logs").mkdir(exist_ok=True)
         files = ["main.py", "requirements.txt"]
@@ -196,24 +197,20 @@ SOFTWARE.
         return "Error!"
 def pract(name):
     try:
-        comment_c = """# This is a practice exercise file.
-""" 
-        note = """# you can add other files here such as dataset, images, etc."""
-
         folder = Path("Folder").mkdir(exist_ok=True)
         folder = Path("Folder")
         Path(folder / "notes.txt").touch(exist_ok=True)
         Path(folder / "notes.txt").write_text(note)
 
-        files_py = ["exercise1.py", "exercise2.py", "exercise3.py", "exercise4.py", "exercise5.py",
+        filesPy = ["exercise1.py", "exercise2.py", "exercise3.py", "exercise4.py", "exercise5.py",
                   "exercise6.py", "exercise7.py", "exercise8.py", "exercise9.py", "exercise10.py",
                   "exercise11.py", "exercise12.py", "exercise13.py", "exercise14.py", "exercise15.py"]
-        files_js = ["exercise1.js", "exercise2.js", "exercise3.js", "exercise4.js", "exercise5.js",
+        filesJs = ["exercise1.js", "exercise2.js", "exercise3.js", "exercise4.js", "exercise5.js",
                   "exercise6.js", "exercise7.js", "exercise8.js", "exercise9.js", "exercise10.js",
                   "exercise11.js", "exercise12.js", "exercise13.js", "exercise14.js", "exercise15.js"]
 
         if name == "js":
-            for f in files_js:
+            for f in filesJs:
                 Path(f).touch()
 
             exe_c = Path("exercise1.js")
@@ -222,7 +219,7 @@ def pract(name):
             return
 
         elif name == "py":
-            for f in files_py:
+            for f in filesPy:
                 Path(f).touch()
 
             exe_p = Path("exercise1.py")
@@ -233,78 +230,9 @@ def pract(name):
             print("Please specify 'py' for Python or 'js' for JavaScript practice exercises.")
     except:
         return "Error!"
+    
 def gitcom():
     try:
-        license_c = """
-MIT License
-
-Copyright (c) 2025 yourname
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
-        readme_c = """# Project Title
-
-A concise description of the project, its purpose, and the problem it solves.
-
-## Features
-
-- Feature one description.
-- Feature two description.
-- Feature three description.
-
-## Tech Stack
-
-- **Frontend**: Framework/Library (e.g., React, Vue, Angular)
-- **Backend**: Language/Runtime (e.g., Node.js, Python, Go)
-- **Database**: Type (e.g., PostgreSQL, MongoDB)
-- **Infrastructure**: Platforms (e.g., AWS, Docker, Vercel)
-
-## Getting Started
-
-### Prerequisites
-
-List the software and versions required to run the project:
-- Node.js (version 18.x or higher)
-- npm or yarn
-- Docker (optional)
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com
-   cd repo-name
-
-## Usage
-
-Run the following command in your terminal:
-
-```bash
-*your project usage*
-
-```
-
-## License
-This project is licensed under the MIT LICENSE.
-"""
-        gitignore_c = """#add yout files/folder to ignore"""
-
         files = [".gitignore", "LICENSE", "README.md"]
         for f in files:
             Path(f).touch
